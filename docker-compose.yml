@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:14.5-alpine
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: password
+
+  web:
+    build: .
+    volumes:
+      - .:/app
+    tty: true
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
