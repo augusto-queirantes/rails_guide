@@ -1,0 +1,61 @@
+require:
+  - rubocop-rspec
+  - rubocop-rails
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'app/assets/**/*'
+    - 'app/views/**/*'
+    - 'db/**/*.rb'
+    - 'lib/**/*.rake'
+    - 'config/**/*.rb'
+    - 'bin/bundle'
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Rails/I18nLocaleTexts:
+  Enabled: false
+
+Rails/LexicallyScopedActionFilter:
+  Enabled: false
+
+Style/FormatStringToken:
+  Enabled: false
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
+
+Rails/InverseOf:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/NamedSubject:
+  Enabled: false
+
+RSpec/LetSetup:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+Style/HashSyntax:
+  Enabled: false
+
+Naming/VariableNumber:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
