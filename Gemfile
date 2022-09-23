@@ -50,3 +50,20 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+
+group :test do
+  # Rspec
+  gem "rspec-rails", "~> 5.1.2"
+
+  # Fake data generator
+  gem "faker", "~> 2.23.0"
+
+  # Clean database before each test execution
+  gem "database_cleaner-active_record", "~> 2.0.1"
+
+  # Factories
+  gem "factory_bot_rails", "~> 6.2.0"
+
+  # Models specs
+  gem "shoulda-matchers", "~> 5.1.0"
+end
