@@ -12,7 +12,6 @@ jobs:
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          DATABASE_HOST: localhost
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
