@@ -10,8 +10,8 @@ jobs:
       postgres:
         image: postgres
         env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_USER: user
+          POSTGRES_PASSWORD: 123456
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -30,19 +30,20 @@ jobs:
       - name: Install dependencies
         run: sudo apt-get install libpq-dev
 
-      - name: Install gems
+      - name: Install dependencies
         run: |
+          sudo apt-get -yqq install libpq-dev
           gem install bundler
           bundle install --jobs 4 --retry 3
 
       - name: Database setup
         run: |
-          rails db:create
-          rails db:migrate
+          bundle exec rake db:create
+          bundle exec rake db:migrate
         env:
           RAILS_ENV: test
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_USER: user
+          POSTGRES_PASSWORD: 123456
 
       - name: Run specs
         run: bundle exec rspec
