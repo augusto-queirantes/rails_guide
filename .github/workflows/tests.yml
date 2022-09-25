@@ -32,14 +32,13 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo apt-get -yqq install libpq-dev
           gem install bundler
           bundle install --jobs 4 --retry 3
 
       - name: Database setup
         run: |
-          bundle exec rake db:create
-          bundle exec rake db:migrate
+          bundle exec rails db:create
+          bundle exec rails db:migrate
         env:
           RAILS_ENV: test
           POSTGRES_USER: user
